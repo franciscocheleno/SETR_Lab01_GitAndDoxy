@@ -1,8 +1,14 @@
 #include <stdio.h>
 
-void dtInit(void) 
+#define SIZE 24
+
+void dtInit(int *temperatures) 
 {
-	printf("This is a function V2.1");
+	for(int i = 0;i < SIZE;i++)
+	{
+		temperatures[i] = 0;
+	}
+	printf("Vector for storing temperatures during a day has been initialized\n");
 	return;
 }
 
@@ -17,9 +23,13 @@ void dtStat(void)
 	return;
 }
 
-void main(void)
+int main(void)
 {
-	dtInit();
-  dtAdd();
+	int tempDay[SIZE];
+
+	dtInit(tempDay);
+  	dtAdd();
 	dtStat();
+	
+	return 0;
 } 
