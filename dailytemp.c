@@ -6,9 +6,24 @@ void dtInit(void)
 	return;
 }
 
-void dtAdd(void) 
+void dtAdd(int vect_temp[SIZE],int hour, int temp) 
 {
-	printf("This is a function V2.1");
+	for (int i=0; i<SIZE;i++){
+	
+		if ((vect_temp[i] >= -50) && (vect_temp[i] <= 50)){
+
+			temperatures[i] = vect_temp[hour] ;
+
+		printf ("Temperature at %d'o clock is %d",hour ,temp);
+		}
+
+		else {
+
+			printf("Invalid temperature (Out of range value)");
+
+		}
+	}
+	
 	return;
 }
 void dtStat(void) 
@@ -20,6 +35,7 @@ void dtStat(void)
 void main(void)
 {
 	dtInit();
-  dtAdd();
+  	dtAdd(tempDay,11,34);
+	dtAdd(tempDay,15,57);
 	dtStat();
 } 
