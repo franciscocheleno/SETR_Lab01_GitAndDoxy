@@ -14,22 +14,17 @@ void dtInit(int *temperatures)
 
 void dtAdd(int vect_temp[SIZE],int hour, int temp) 
 {
-	//for (int i=0; i<SIZE;i++){
-	
 		if ((temp >= -50) && (temp <= 50)){
 
 			vect_temp[hour] = temp;
 
 		printf ("Temperature at %d'o clock is %d\n",hour ,temp);
 		}
-
 		else {
 
 			printf("Invalid temperature (Out of range value)\n");
 
 		}
-	//}
-	
 }
 void dtStat(int vect_temp[SIZE],int min,int max,int avg)
 {
@@ -53,19 +48,23 @@ void dtStat(int vect_temp[SIZE],int min,int max,int avg)
 	avg = sum/count;
 	printf("Minimum is %d\n", min);
 	printf("Maximum is %d\n", max);
-	printf("Average is %.2f", avg);
+	printf("Average is %d\n", avg);
 	return;
 }
 
 int main(void)
 {
 	int tempDay[SIZE];
-	int min,max,avg = 0;
+	int min = 0,max = 0,avg = 0;
 
 	dtInit(tempDay);
 
   	dtAdd(tempDay,11,34);
+	dtAdd(tempDay,12,-2);
 	dtAdd(tempDay,15,57);
+	dtAdd(tempDay,19,-43);
+	dtAdd(tempDay,5,1000);
+
 
 	dtStat(tempDay,min,max,avg);
 	
