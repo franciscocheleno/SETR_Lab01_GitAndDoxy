@@ -1,30 +1,35 @@
 #include <stdio.h>
 
-void dtInit(void) 
+#define SIZE 24
+
+void dtInit(int *temperatures) 
 {
-	printf("This is a function V2.1");
+	for(int i = 0;i < SIZE;i++)
+	{
+		temperatures[i] = 0;
+	}
+	printf("Vector for storing temperatures during a day has been initialized\n");
 	return;
 }
 
 void dtAdd(int vect_temp[SIZE],int hour, int temp) 
 {
-	for (int i=0; i<SIZE;i++){
+	//for (int i=0; i<SIZE;i++){
 	
-		if ((vect_temp[i] >= -50) && (vect_temp[i] <= 50)){
+		if ((temp >= -50) && (temp <= 50)){
 
-			temperatures[i] = vect_temp[hour] ;
+			vect_temp[hour] = temp;
 
-		printf ("Temperature at %d'o clock is %d",hour ,temp);
+		printf ("Temperature at %d'o clock is %d\n",hour ,temp);
 		}
 
 		else {
 
-			printf("Invalid temperature (Out of range value)");
+			printf("Invalid temperature (Out of range value)\n");
 
 		}
-	}
+	//}
 	
-	return;
 }
 void dtStat(void) 
 {
@@ -32,10 +37,14 @@ void dtStat(void)
 	return;
 }
 
-void main(void)
+int main(void)
 {
-	dtInit();
+	int tempDay[SIZE];
+
+	dtInit(tempDay);
   	dtAdd(tempDay,11,34);
 	dtAdd(tempDay,15,57);
 	dtStat();
+	
+	return 0;
 } 
