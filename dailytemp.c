@@ -1,7 +1,20 @@
+/**
+ * \file:   dailytemp.c
+ * \author: Francisco Heleno <francisco.c.heleno@ua.pt> and Hugo Carola <hugocarola@ua.pt>
+ *
+ * \date February, 2024, 15:47 PM
+ * \brief Daily temperature
+ * 
+ */
+
 #include <stdio.h>
 
 #define SIZE 24
 
+/**
+ * @brief Initializes the temperature vector with zeros
+ * @param temperatures Pointer to the temperature vector
+ */
 void dtInit(int *temperatures) 
 {
 	for(int i = 0;i < SIZE;i++)
@@ -12,6 +25,12 @@ void dtInit(int *temperatures)
 	return;
 }
 
+/**
+ * @brief Adds a temperature value to the temperature vector at a specific hour
+ * @param vect_temp Pointer to the temperature vector
+ * @param hour Hour of the day (0-23)
+ * @param temp Temperature value
+ */
 void dtAdd(int vect_temp[SIZE],int hour, int temp) 
 {
 		if ((temp >= -50) && (temp <= 50)){
@@ -26,6 +45,14 @@ void dtAdd(int vect_temp[SIZE],int hour, int temp)
 
 		}
 }
+
+/**
+ * @brief Calculates the minimum, maximum, and average temperature values from the temperature vector
+ * @param vect_temp Pointer to the temperature vector
+ * @param min Minimum temperature value
+ * @param max Maximum temperature value
+ * @param avg Average temperature value
+ */
 void dtStat(int vect_temp[SIZE],int min,int max,int avg)
 {
 	int sum = 0;
@@ -52,6 +79,9 @@ void dtStat(int vect_temp[SIZE],int min,int max,int avg)
 	return;
 }
 
+/**
+ * @brief Main function.
+ */
 int main(void)
 {
 	int tempDay[SIZE];
@@ -65,8 +95,7 @@ int main(void)
 	dtAdd(tempDay,19,-43);
 	dtAdd(tempDay,5,1000);
 
-
 	dtStat(tempDay,min,max,avg);
 	
 	return 0;
-} 
+}

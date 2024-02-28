@@ -1,0 +1,112 @@
+\doxysection{dailytemp.\+c File Reference}
+\hypertarget{dailytemp_8c}{}\label{dailytemp_8c}\index{dailytemp.c@{dailytemp.c}}
+
+
+Daily temperature.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dailytemp_8c_a70ed59adcb4159ac551058053e649640}{SIZE}}~24
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dailytemp_8c_a35c7ae2b572238f992dba3af11171fdd}{dt\+Init}} (int \texorpdfstring{$\ast$}{*}temperatures)
+\begin{DoxyCompactList}\small\item\em Initializes the temperature vector with zeros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dailytemp_8c_a46a84f20ebe538c9dd179d0bd6c856f7}{dt\+Add}} (int vect\+\_\+temp\mbox{[}\mbox{\hyperlink{dailytemp_8c_a70ed59adcb4159ac551058053e649640}{SIZE}}\mbox{]}, int hour, int temp)
+\begin{DoxyCompactList}\small\item\em Adds a temperature value to the temperature vector at a specific hour. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dailytemp_8c_a7c7e619eb00a296d8e7fd5f65d9136e3}{dt\+Stat}} (int vect\+\_\+temp\mbox{[}\mbox{\hyperlink{dailytemp_8c_a70ed59adcb4159ac551058053e649640}{SIZE}}\mbox{]}, int min, int max, int avg)
+\begin{DoxyCompactList}\small\item\em Calculates the minimum, maximum, and average temperature values from the temperature vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{dailytemp_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Daily temperature. 
+
+\begin{DoxyAuthor}{Author}
+\+: Francisco Heleno \href{mailto:francisco.c.heleno@ua.pt}{\texttt{ francisco.\+c.\+heleno@ua.\+pt}} and Hugo Carola \href{mailto:hugocarola@ua.pt}{\texttt{ hugocarola@ua.\+pt}}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+February, 2024, 15\+:47 PM  
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{dailytemp_8c_a70ed59adcb4159ac551058053e649640}\label{dailytemp_8c_a70ed59adcb4159ac551058053e649640} 
+\index{dailytemp.c@{dailytemp.c}!SIZE@{SIZE}}
+\index{SIZE@{SIZE}!dailytemp.c@{dailytemp.c}}
+\doxysubsubsection{\texorpdfstring{SIZE}{SIZE}}
+{\footnotesize\ttfamily \#define SIZE~24}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dailytemp_8c_a46a84f20ebe538c9dd179d0bd6c856f7}\label{dailytemp_8c_a46a84f20ebe538c9dd179d0bd6c856f7} 
+\index{dailytemp.c@{dailytemp.c}!dtAdd@{dtAdd}}
+\index{dtAdd@{dtAdd}!dailytemp.c@{dailytemp.c}}
+\doxysubsubsection{\texorpdfstring{dtAdd()}{dtAdd()}}
+{\footnotesize\ttfamily void dt\+Add (\begin{DoxyParamCaption}\item[{int}]{vect\+\_\+temp\mbox{[}\+SIZE\mbox{]},  }\item[{int}]{hour,  }\item[{int}]{temp }\end{DoxyParamCaption})}
+
+
+
+Adds a temperature value to the temperature vector at a specific hour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vect\+\_\+temp} & Pointer to the temperature vector \\
+\hline
+{\em hour} & Hour of the day (0-\/23) \\
+\hline
+{\em temp} & Temperature value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dailytemp_8c_a35c7ae2b572238f992dba3af11171fdd}\label{dailytemp_8c_a35c7ae2b572238f992dba3af11171fdd} 
+\index{dailytemp.c@{dailytemp.c}!dtInit@{dtInit}}
+\index{dtInit@{dtInit}!dailytemp.c@{dailytemp.c}}
+\doxysubsubsection{\texorpdfstring{dtInit()}{dtInit()}}
+{\footnotesize\ttfamily void dt\+Init (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{temperatures }\end{DoxyParamCaption})}
+
+
+
+Initializes the temperature vector with zeros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperatures} & Pointer to the temperature vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dailytemp_8c_a7c7e619eb00a296d8e7fd5f65d9136e3}\label{dailytemp_8c_a7c7e619eb00a296d8e7fd5f65d9136e3} 
+\index{dailytemp.c@{dailytemp.c}!dtStat@{dtStat}}
+\index{dtStat@{dtStat}!dailytemp.c@{dailytemp.c}}
+\doxysubsubsection{\texorpdfstring{dtStat()}{dtStat()}}
+{\footnotesize\ttfamily void dt\+Stat (\begin{DoxyParamCaption}\item[{int}]{vect\+\_\+temp\mbox{[}\+SIZE\mbox{]},  }\item[{int}]{min,  }\item[{int}]{max,  }\item[{int}]{avg }\end{DoxyParamCaption})}
+
+
+
+Calculates the minimum, maximum, and average temperature values from the temperature vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vect\+\_\+temp} & Pointer to the temperature vector \\
+\hline
+{\em min} & Minimum temperature value \\
+\hline
+{\em max} & Maximum temperature value \\
+\hline
+{\em avg} & Average temperature value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dailytemp_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{dailytemp_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{dailytemp.c@{dailytemp.c}!main@{main}}
+\index{main@{main}!dailytemp.c@{dailytemp.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main function. 
+
